@@ -64,18 +64,6 @@ export const StopwatchItem = React.memo(
 
     const textColor = getContrastColor(stopwatch.color);
 
-    const darkenColor = (hex: string, percent: number = 20): string => {
-      const num = parseInt(hex.replace('#', ''), 16);
-      const r = Math.max(0, ((num >> 16) * (100 - percent)) / 100);
-      const g = Math.max(0, (((num >> 8) & 0x00ff) * (100 - percent)) / 100);
-      const b = Math.max(0, ((num & 0x0000ff) * (100 - percent)) / 100);
-      return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-    };
-
-    const buttonColor = darkenColor(stopwatch.color, 15);
-    const buttonHoverColor = darkenColor(stopwatch.color, 25);
-    const buttonTextColor = getContrastColor(buttonColor);
-
     return (
       <div
         className="stopwatch-item"
