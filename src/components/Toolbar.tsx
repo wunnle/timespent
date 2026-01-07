@@ -9,7 +9,7 @@ export const Toolbar = React.memo(({ onAdd }: ToolbarProps) => {
     <div className="toolbar">
       <div className="toolbar-title">
         <h1>Timespent</h1>
-        <p className="toolbar-subtitle">Time tracker for your activities</p>
+        <p className="toolbar-subtitle">Time trackers for your activities</p>
       </div>
       <button
         onClick={onAdd}
